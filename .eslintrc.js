@@ -12,11 +12,9 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   overrides: [],
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
-    parser: 'babel-eslint'
+    sourceType: 'module'
   },
   plugins: ['react', '@babel', '@typescript-eslint', 'react-hooks', 'unicorn'],
   rules: {}

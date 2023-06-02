@@ -1,8 +1,10 @@
 {
-  "name": "oax",
+  "name": "onesecond-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/eslint-plugin": "^7.19.1",
+    "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -10,19 +12,30 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "ahooks": "^3.7.7",
+    "axios": "^1.4.0",
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-plugin-compat": "^4.1.4",
+    "eslint-plugin-unicorn": "^47.0.0",
+    "husky-init": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "tailwindcss": "^3.3.2",
     "typescript": "*",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "nvm use && cross-env NODE_ENV=development craco start",
-    "build": "cross-env NODE_ENV=production craco build",
+    "start": "craco start",
+    "dev": "http-server dist --config ./config/webpack.dev.js",
+    "build": "craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -43,26 +56,23 @@
     ]
   },
   "devDependencies": {
-    "@babel/eslint-plugin": "^7.19.1",
-    "@craco/craco": "^7.1.0",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
-    "antd": "^5.5.2",
     "commitizen": "^4.3.0",
-    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "cz-customizable": "^7.0.0",
-    "eslint": "^8.40.0",
+    "eslint": "^8.41.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
     "eslint-import-resolver-typescript": "^3.5.5",
-    "eslint-plugin-compat": "^4.1.1",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-plugin-unicorn": "^47.0.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8"
@@ -71,8 +81,5 @@
     "commitizen": {
       "path": "./node_modules/cz-customizable"
     }
-  },
-  "lint-staged": {
-    "*.{vue,js,ts}": "eslint --fix"
   }
 }

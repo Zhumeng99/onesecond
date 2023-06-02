@@ -1,5 +1,6 @@
-// import path from "path";
-// const path = require('path')
+// import path from 'path'
+const path = require('path')
+
 module.exports = {
   devServer: {
     proxy: {
@@ -13,7 +14,7 @@ module.exports = {
   },
   webpack: {
     alias: {
-      // '@': path.resolve(__dirname, './src')
+      '@': path.resolve(__dirname, './src')
     }
   }
 }

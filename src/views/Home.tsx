@@ -8,7 +8,6 @@ export default function Home() {
   const [SongListType, SetSongListType] = useState<
     Awaited<ReturnType<typeof getSongListType>>['data']['sub']
   >([])
-  console.log(SongListType)
   useEffect(() => {
     getSongListType()
       .then((res) => {
